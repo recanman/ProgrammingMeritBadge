@@ -40,5 +40,33 @@ This is the amount of money in EURO'S: 87000.0
 
 __Sample Output for Python 3.710:__
 <pre>
-to be done
+python3 convertTemp-3.7.10.py 
+This is the original program.
+Enter next temperature in degrees Farenheight (F):72
+Temperature in degrees C is: 22.22222222222222
+Input another?0
+This is the for the first requirement.
+Enter next temperature in degrees Farenheight (F):100
+Temperature in degrees C is: 37.77777777777778
+Input another?0
+This is the for the second requirement.
+Enter next temperature in degrees Farenheight (F):12  
+Temperature in degrees C is: -11.11111111111111
+Input another?0
+This is the for the third requirement.
+Enter next temperature in degrees Farenheight (F):-4
+Temperature in degrees C is: -20.0
+Pack long underwear!
+Input another?0
+This is the for the fourth requirement.
+What is your name?Abboud
+Hello, Abboud
+Abboud, enter next temperature in degrees Farenheight (F):124   
+Abboud, the temperature in degrees C is: 51.111111111111114
+Hey Abboud ,Remember to hydrate!
+Abboud, would you like to input another?0
+This is for the final requirement.
+Enter money in USD ($) > 72                               
+This is the amount of money in EURO'S: 62.64
+Thank you!
 </pre>
