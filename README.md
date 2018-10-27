@@ -1,7 +1,7 @@
 # ProgrammingMeritBadge
-Programming merit badge requirements.
+### Programming merit badge requirements.
 
-Sample output:
+__Sample output for Python 2.7.10:__
 
 <pre>
 cd ~/IdeaProjects/Programming_MB/ && python convertTemp.py
@@ -36,4 +36,9 @@ Abboud, would you like to input another?0
 This is for the final requirement.
 Enter money in USD ($) > 100000
 This is the amount of money in EURO'S: 87000.0
+</pre>
+
+__Sample Output for Python 3.710:__
+<pre>
+to be done
 </pre>
