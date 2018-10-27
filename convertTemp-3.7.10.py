@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/env python3
 
 def convertUSDtoEURO_req5():
@@ -164,6 +163,4 @@ print("This is the for the fourth requirement.")
 convertTemp_req4()
 print("This is for the final requirement.")
 convertUSDtoEURO_req5()
-=======
-
->>>>>>> 55369a79c33af44570af4a860c06f4f1319dae09
+print("Thank you!")
