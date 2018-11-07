@@ -1,6 +1,7 @@
 # ProgrammingMeritBadge
 ### Programming merit badge requirements.
 
+#### Requirement 5A
 __Sample output for Python 2.7.10:__
 
 <pre>
@@ -70,3 +71,7 @@ Enter money in USD ($) > 72
 This is the amount of money in EURO'S: 62.64
 Thank you!
 </pre>
+
+#### Requirement 5B
+__Sample Output for The Survival Game__
+<pre>Coming Soon! The Survival Game is still in developement</pre>
