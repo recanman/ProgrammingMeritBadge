@@ -1,26 +1,19 @@
-<<<<<<< HEAD
 /*
 	Copyright © 2018 ***REMOVED***. All rights reserved.
 	This may not be reproduced or distributed in any way without written
 	permission from the author.
 */
-=======
->>>>>>> 0252513130ca3d3c3f7fdaefeaa9b23673911cae
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-<<<<<<< HEAD
 #include "functions.h"
-=======
->>>>>>> 0252513130ca3d3c3f7fdaefeaa9b23673911cae
 
 using namespace std;
 
 int main() {
 
-<<<<<<< HEAD
 	printf("Welcome to The Survival Game!\n");
 	sleep(1);
 	printf("What do you want your character's gender to be?\n[boy/girl]> ");
@@ -66,7 +59,6 @@ int main() {
 								battle();
 							}
 
-=======
 	int wood = 0;
 	int stone = 0;
 	int metal = 0;
@@ -137,28 +129,25 @@ int main() {
 						battle();
 					}*/
 
->>>>>>> 0252513130ca3d3c3f7fdaefeaa9b23673911cae
 					printf("Your character scans the area for a tree...\n");
 					sleep(2);
 					cout << "Your character " << findsMaterial << " find what you were looking for!";
 					if (strncmp(findsMaterial, "does", 4) == 0) {
 						printf("You start chopping down the tree...\n");
 						sleep(2);
-<<<<<<< HEAD
+
             if (strncmp(currentAxe, "Wood", 4) == 0) {
               materialsGotten = rand() % 26;
               cout << "You cut down the tree! You got " << materialsGotten << " wood.";
               wood += materialsGotten;
               materials = wood + stone + metal / 3;
             }
-=======
-                                        	if (strncmp(currentAxe, "Wood", 4) == 0) {
-                                                	materialsGotten = rand() % 26;
-                                                	cout << "You cut down the tree! You got " << materialsGotten << " wood.";
-                                               		wood += materialsGotten;
-                                               		materials = wood + stone + metal / 3;
-                                        	}
->>>>>>> 0252513130ca3d3c3f7fdaefeaa9b23673911cae
+            if (strncmp(currentAxe, "Wood", 4) == 0) {
+              materialsGotten = rand() % 26;
+              cout << "You cut down the tree! You got " << materialsGotten << " wood.";
+              wood += materialsGotten;
+              materials = wood + stone + metal / 3;
+            }
 					}
 				}
 				else if (strncmp(materialType, "stone", 5) == 0) {}

@@ -8,20 +8,21 @@
 using namespace std;
 /*
   Side note: I know it is not recommended to declare functions in header files, but I don't
-  that much of a problem; it just takes a bit longer to compile and run.
+  think that is much of a problem; it just takes a bit longer to compile and run.
 */
 int monsterHealth; // This stays the same every encounter.
-int monsterDamage; // It is random each turn.
-int hitsMonster;
-char currentWeapon[6] = "Wood";
+int monsterDamage; // It is random each turn based on your weapon quality.
+int characterDamage; // This is the variable that holds how much damage is done to the monster each turn.
+char hitsMonster; // Decides if you hit the monster you are battling or not based on a random basis
+char currentWeapon[6] = "Wood"; // The initial tools your character starts with are made of wood.
 char currentAxe[6] = "Wood";
 char currentPickaxe[6] = "Wood";
 int wood = 0;
 int stone = 0;
 int metal = 0;
-int materials = wood + stone + metal / 3;
-int health = 100;
-int hunger = 0;
+int materials = wood + stone + metal; // This is the sum of all the materials you have.
+int health = 100; // Your health level; it starts as 100.
+int hunger = 0; // The hunger level; it starts as zero and gets worse as the game progresses.
 int randYes;
 int randNo;
 int randAnswer;
@@ -46,17 +47,55 @@ void battle() {
         printf("Battle Commands:\nhit - Makes your character try and hit the monster with he/she's current weapon.\nthrow - Makes your character try to throw he/she's weapon at the monster, it will do more damage if it succeeds.\nrun - Makes your character try and run from the monster. This can be used only once per encounter. It will have a higher chance of succeeding if the monster is low on health.\nhelp - Shows the battle commands list.\n");
       } else if (strncmp(battleCommand, "hit\n", 3) == 0) {
         if (hunger > 8) {
-          printf("You are so tired, you can't even get your weapon out of its sheath! Do you want to eat some food to get some energy?");
+          printf("You are so tired, you can't even get your weapon out! Do you want to eat some food to get some energy?\n");
         }
-        cout << "You swing at the monster and it " << hitsMonster << " hit it.";
+        hitsMonster = rand() % 2; // 0 hits, 1 doesn't hit.
+        if (hitsMonster == 0) {
+          hitsMonster = "does"; // Makes it readable.
+        } else if (hitsMonster == 1) {
+          hitsMonster = "does not"; // Makes it readable.
+        }
+        cout << "You swing at the monster and your weapon " << hitsMonster << " hit the monster.";
+        if (strncmp(hitsMonster, "does", 5) == 0) {
+          characterDamage = rand() % 9.5;
+          monsterHealth -= characterDamage;
+          cout << "You do " << characterDamage << " damage to the monster. The monster now has " << monsterHealth << " health.";
+          // Monster's turn
+        }
       }
 
   } else if (strncmp(currentWeapon, "Stone", 5) == 0) {
       monsterHealth = rand() % 61;
       cout << "The monster's health is: " << monsterHealth;
+      hitsMonster = rand() % 2; // 0 hits, 1 doesn't hit.
+      if (hitsMonster == 0) {
+        hitsMonster = "does"; // Makes it readable.
+      } else if (hitsMonster == 1) {
+        hitsMonster = "does not"; // Makes it readable.
+      }
+      cout << "You swing at the monster and your weapon " << hitsMonster << " hit the monster.";
+      if (strncmp(hitsMonster, "does", 5) == 0) {
+        characterDamage = rand() % 19;
+        monsterHealth -= characterDamage;
+        cout << "You do " << characterDamage << " damage to the monster. The monster now has " << monsterHealth << " health.";
+        // Monster's turn
+      }
   } else if (strncmp(currentWeapon, "Metal", 5) == 0) {
       monsterHealth = rand() % 101;
       cout << "The monster's health is: " << monsterHealth;
+      hitsMonster = rand() % 2; // 0 hits, 1 doesn't hit.
+      if (hitsMonster == 0) {
+        hitsMonster = "does"; // Makes it readable.
+      } else if (hitsMonster == 1) {
+        hitsMonster = "does not"; // Makes it readable.
+      }
+      cout << "You swing at the monster and your weapon " << hitsMonster << " hit the monster.";
+      if (strncmp(hitsMonster, "does", 5) == 0) {
+        characterDamage = rand() % 28.5;
+        monsterHealth -= characterDamage;
+        cout << "You do " << characterDamage << " damage to the monster. The monster now has " << monsterHealth << " health.";
+        // Monster's turn
+      }
     }
   // This determines how hard the monster must be based on your current weapons.
 }
