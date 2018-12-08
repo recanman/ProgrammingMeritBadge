@@ -13,7 +13,7 @@ using namespace std;
 int monsterHealth; // This stays the same every encounter.
 int monsterDamage; // It is random each turn based on your weapon quality.
 int characterDamage; // This is the variable that holds how much damage is done to the monster each turn.
-char hitsMonster; // Decides if you hit the monster you are battling or not based on a random basis
+int hitsMonster; // Decides if you hit the monster you are battling or not based on a random basis
 char currentWeapon[6] = "Wood"; // The initial tools your character starts with are made of wood.
 char currentAxe[6] = "Wood";
 char currentPickaxe[6] = "Wood";
@@ -34,10 +34,16 @@ char exitGame[2];
 char gender[5];
 char battleCommand[6]; // This is so the compiler doesn't get confused with the variable command defined in survivalGame.cpp.
 int materialsGotten = 0;
+char ifContinued[6] = "false"; // A variable that makes the code recognize that 1 turn is over.
+char hitsMonsterReadable[9];
 
 void battle() {
-  printf("A monster has found you! You must battle it to keep yourself alive!\n");
-  printf("Battle Commands:\nhit - Makes your character try and hit the monster with he/she's current weapon.\nthrow - Makes your character try to throw he/she's weapon at the monster, it will do more damage if it succeeds.\nrun - Makes your character try and run from the monster. This can be used only once per encounter. It will have a higher chance of succeeding if the monster is low on health.\nhelp - Shows the battle commands list.\n");
+for ( ;; ) {
+  if (strncmp(ifContinued, "false", 5) == 0) {
+    printf("A monster has found you! You must battle it to keep yourself alive!\n");
+    printf("Battle Commands:\nhit - Makes your character try and hit the monster with he/she's current weapon.\nthrow - Makes your character try to throw he/she's weapon at the monster, it will do more damage if it succeeds.\nrun - Makes your character try and run from the monster. This can be used only once per encounter. It will have a higher chance of succeeding if the monster is low on health.\nhelp - Shows the battle commands list.\n");
+  }
+  else {
   if (strncmp(currentWeapon, "Wood", 4) == 0) {
       monsterHealth = rand() % 31;
       cout << "The monster's health is: " << monsterHealth << endl;
@@ -51,16 +57,31 @@ void battle() {
         }
         hitsMonster = rand() % 2; // 0 hits, 1 doesn't hit.
         if (hitsMonster == 0) {
-          hitsMonster = "does"; // Makes it readable.
+          strcpy(hitsMonsterReadable, "does"); // Makes it readable. ("does" is true, and "does not" is false.)
         } else if (hitsMonster == 1) {
-          hitsMonster = "does not"; // Makes it readable.
+          strcpy(hitsMonsterReadable, "does not"); // Makes it readable. ("does" is true, and "does not" is false.)
         }
         cout << "You swing at the monster and your weapon " << hitsMonster << " hit the monster.";
-        if (strncmp(hitsMonster, "does", 5) == 0) {
-          characterDamage = rand() % 9.5;
+        if (strncmp(hitsMonsterReadable, "does", 5) == 0) {
+          characterDamage = rand() % 9;
           monsterHealth -= characterDamage;
           cout << "You do " << characterDamage << " damage to the monster. The monster now has " << monsterHealth << " health.";
-          // Monster's turn
+          printf("The monster is getting ready to attack.\n");
+          sleep(2);
+          monsterDamage = rand() % 11; // Monsters are stronger than the user's character.
+          health -= monsterDamage;
+          cout << "The monster did" << monsterDamage << " damage to you. You now have " << health << " health";
+          strcpy(ifContinued, "true");
+          continue;
+        }
+        else if (strncmp(hitsMonsterReadable, "does not", 9) == 0) {
+          printf("The monster is getting ready to attack.\n");
+          sleep(2);
+          monsterDamage = rand() % 11; // Monsters are stronger than the user's character.
+          health -= monsterDamage;
+          cout << "The monster did" << monsterDamage << " damage to you. You now have " << health << " health";
+          strcpy(ifContinued, "true");
+          continue;
         }
       }
 
@@ -69,34 +90,66 @@ void battle() {
       cout << "The monster's health is: " << monsterHealth;
       hitsMonster = rand() % 2; // 0 hits, 1 doesn't hit.
       if (hitsMonster == 0) {
-        hitsMonster = "does"; // Makes it readable.
+        strcpy(hitsMonsterReadable, "does"); // Makes it readable.
       } else if (hitsMonster == 1) {
-        hitsMonster = "does not"; // Makes it readable.
+        strcpy(hitsMonsterReadable, "does not"); // Makes it readable.
       }
       cout << "You swing at the monster and your weapon " << hitsMonster << " hit the monster.";
-      if (strncmp(hitsMonster, "does", 5) == 0) {
+      if (strncmp(hitsMonsterReadable, "does", 5) == 0) {
         characterDamage = rand() % 19;
         monsterHealth -= characterDamage;
         cout << "You do " << characterDamage << " damage to the monster. The monster now has " << monsterHealth << " health.";
-        // Monster's turn
+        printf("The monster is getting ready to attack.\n");
+        sleep(2);
+        monsterDamage = rand() % 11; // Monsters are stronger than the user's character.
+        health -= monsterDamage;
+        cout << "The monster did" << monsterDamage << " damage to you. You now have " << health << " health";
+        strcpy(ifContinued, "true");
+        continue;
+      }
+      else if (strncmp(hitsMonsterReadable, "does not", 9) == 0) {
+        printf("The monster is getting ready to attack.\n");
+        sleep(2);
+        monsterDamage = rand() % 11; // Monsters are stronger than the user's character.
+        health -= monsterDamage;
+        cout << "The monster did" << monsterDamage << " damage to you. You now have " << health << " health";
+        strcpy(ifContinued, "true");
+        continue;
       }
   } else if (strncmp(currentWeapon, "Metal", 5) == 0) {
       monsterHealth = rand() % 101;
       cout << "The monster's health is: " << monsterHealth;
       hitsMonster = rand() % 2; // 0 hits, 1 doesn't hit.
       if (hitsMonster == 0) {
-        hitsMonster = "does"; // Makes it readable.
+        strcpy(hitsMonsterReadable, "does"); // Makes it readable.
       } else if (hitsMonster == 1) {
-        hitsMonster = "does not"; // Makes it readable.
+        strcpy(hitsMonsterReadable, "does not"); // Makes it readable.
       }
       cout << "You swing at the monster and your weapon " << hitsMonster << " hit the monster.";
-      if (strncmp(hitsMonster, "does", 5) == 0) {
-        characterDamage = rand() % 28.5;
+      if (strncmp(hitsMonsterReadable, "does", 5) == 0) {
+        characterDamage = rand() % 28;
         monsterHealth -= characterDamage;
         cout << "You do " << characterDamage << " damage to the monster. The monster now has " << monsterHealth << " health.";
-        // Monster's turn
+        printf("The monster is getting ready to attack.\n");
+        sleep(2);
+        monsterDamage = rand() % 11; // Monsters are stronger than the user's character.
+        health -= monsterDamage;
+        cout << "The monster did" << monsterDamage << " damage to you. You now have " << health << " health";
+        strcpy(ifContinued, "true");
+        continue;
+      }
+      else if (strncmp(hitsMonsterReadable, "does not", 9) == 0) {
+          printf("The monster is getting ready to attack.\n");
+          sleep(2);
+          monsterDamage = rand() % 11; // Monsters are stronger than the user's character.
+          health -= monsterDamage;
+          cout << "The monster did" << monsterDamage << " damage to you. You now have " << health << " health";
+          strcpy(ifContinued, "true");
+          continue;
+        }
       }
     }
   // This determines how hard the monster must be based on your current weapons.
+}
 }
 #endif
