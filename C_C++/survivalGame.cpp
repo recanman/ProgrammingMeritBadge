@@ -27,13 +27,8 @@ int main() {
 	char materialType[6];
 	char findsMaterial[10];
 	char exitGame[2];
-	char gender[5];
 	int materialsGotten = 0;
-	int randYes;
-	int randNo;
-	int randAnswer;
-	int randBattle;
-	int findMaterial[3] = [1, 2, 3] // 1 = true, 2 = false, 3 = finds a monster
+	int findMaterial[3] = {1, 2, 3}; // 1 = true, 2 = false, 3 = finds a monster
 	int randIndex;
 
 	printf("Welcome to The Survival Game!\n");
@@ -60,48 +55,33 @@ int main() {
 			} else {
 				printf("Which material would you like to look for?\n> ");
 				scanf("%s", materialType);
+
 				if (strncmp(materialType, "wood" , 4) == 0) {
-					sleep(1);
-					randAnswer = rand() % 4;
-
-					if (randAnswer == randYes) {
-						strcpy(findsMaterial, "does");
-					}
-					else if (randAnswer == randNo) {
-						strcpy(findsMaterial, "does not");
-					}
-					/*else if (randAnswer == randBattle) {
-						battle();
-					}*/
-
 					printf("Your character scans the area for a tree...\n");
 					sleep(2);
-					cout << "Your character " << findsMaterial << " find what you were looking for!";
-					if (strncmp(findsMaterial, "does", 4) == 0) {
-						printf("You start chopping down the tree...\n");
-						sleep(2);
-						randIndex = rand() % 4;
-						if (findMaterial[randIndex] == 1) {
-							printf("\n\nYou found a tree! Your character will cut it down.\n\n");
-						} else if (findsMaterial[randIndex] == 2) {
-							printf("\n\nYour character could not find a tree.\n\n");
-						} else if (findsMaterial[randIndex] == 3) {
-							printf("Your chatacter found a monster!\n\n");
-						}
-            if (strncmp(currentAxe, "Wood", 4) == 0) {
-              materialsGotten = rand() % 26;
-              cout << "You cut down the tree! You got " << materialsGotten << " wood.";
-              wood += materialsGotten;
-              materials = wood + stone + metal;
+					randIndex = rand() % 4;
+					materials += randIndex;
+					if (findMaterial[randIndex] == 1) {
+						printf("\n\nYou found a tree! Your character will cut it down.\n\n");
+					} else if (findsMaterial[randIndex] == 2) {
+						printf("\n\nYour character could not find a tree.\n\n"); // NOTE: RETURN BACK TO ASKING "What would you like to do?"
+					} else if (findsMaterial[randIndex] == 3) {battle();}
+
+          if (strncmp(currentAxe, "Wood", 4) == 0) {
+            materialsGotten = rand() % 26;
+            cout << "You cut down the tree! You got " << materialsGotten << " wood.";
+            wood += materialsGotten;
+            materials = wood + stone + metal;
+						cout << "You now have " << wood << " wood. So, you have " << materials << " materials";
             }
 					}
 				}
-				else if (strncmp(materialType, "stone", 5) == 0) {}
-				else if (strncmp(materialType, "metal", 5) == 0) {}
+				/*else if (strncmp(materialType, "stone", 5) == 0) {}
+				else if (strncmp(materialType, "metal", 5) == 0) {}*/
 			}
 		}
 /***************************/
-		else if (strncmp(command, "getfood\n", 7) == 0) {
+		/* make compatible to be else if instead of having to be if, I am still working on the "getmaterials" command. After, attach evrything together.*/else if (strncmp(command, "getfood\n", 7) == 0) {
 			printf("Coming soon!\n");
 			// Start looking for food
 		}
@@ -129,6 +109,3 @@ int main() {
 			printf("Invalid command.\n");
 		}
 	}
-
-return 0;
-}

@@ -31,7 +31,6 @@ char command[10];
 char materialType[6];
 char findsMaterial[10];
 char exitGame[2];
-char gender[5];
 char battleCommand[6]; // This is so the compiler doesn't get confused with the variable command defined in survivalGame.cpp.
 int materialsGotten = 0;
 char ifContinued[6] = "false"; // A variable that makes the code recognize that 1 turn is over.
