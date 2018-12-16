@@ -2,14 +2,18 @@
 	Copyright © 2018 ***REMOVED***. All rights reserved.
 	This may not be reproduced or distributed in any way without written
 	permission from the author.
-*/
+
+
+THIS GAME IS NO LONGER SUPPORTED DUE TO COMPLICATEDNESS
+
+
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 using namespace std;
 /*
   Side note: I know it is not recommended to declare functions in header files, but I don't
   think that is much of a problem; it just takes a bit longer to compile and run.
-*/
+
 int monsterHealth; // This stays the same every encounter.
 int monsterDamage; // It is random each turn based on your weapon quality.
 int characterDamage; // This is the variable that holds how much damage is done to the monster each turn.
@@ -152,3 +156,4 @@ for ( ;; ) {
 }
 }
 #endif
+*/

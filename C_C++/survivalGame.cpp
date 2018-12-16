@@ -1,8 +1,10 @@
+#include <stdio.h>
+int main() {printf("This game is too complicated, and it has taken too long. I have changed to a new idea.");return 0;}
 /*
 	Copyright © 2018 ***REMOVED***. All rights reserved.
 	This may not be reproduced or distributed in any way without written
 	permission from the author.
-*/
+
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
