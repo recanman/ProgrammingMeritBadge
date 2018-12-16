@@ -17,7 +17,7 @@ Enter next temperature in degrees Farenheight (F):-10
 Pack warm clothes!
 Input another?0
 This is the for the second requirement.
-Enter next temperature in degrees Farenheight (F):-30 
+Enter next temperature in degrees Farenheight (F):-30
 ('Temperature in degrees C is:', -35)
 Pack long underwear!
 Input another?0
@@ -41,7 +41,7 @@ This is the amount of money in EURO'S: 87000.0
 
 __Sample Output for Python 3.710:__
 <pre>
-python3 convertTemp-3.7.10.py 
+python3 convertTemp-3.7.10.py
 This is the original program.
 Enter next temperature in degrees Farenheight (F):72
 Temperature in degrees C is: 22.22222222222222
@@ -73,5 +73,5 @@ Thank you!
 </pre>
 
 #### Requirement 5B
-__Sample Output for The Survival Game__
-<pre>Coming Soon! The Survival Game is still in developement</pre>
+__Sample Output for BattleShip__
+<pre>Coming Soon! Battleship is still in development</pre>
