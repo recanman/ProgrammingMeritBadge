@@ -73,5 +73,5 @@ Thank you!
 </pre>
 
 #### Requirement 5B
-__Sample Output for BattleShip__
+__Sample Output for Guess My Number__
 <pre>Coming Soon! Battleship is still in development</pre>
