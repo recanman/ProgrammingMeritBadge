@@ -74,4 +74,4 @@ Thank you!
 
 #### Requirement 5B
 __Sample Output for Guess My Number__
-<pre>Coming Soon! Battleship is still in development</pre>
+<pre>Coming Soon! Guess My Number is still in development</pre>
