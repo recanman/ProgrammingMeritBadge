@@ -46,7 +46,11 @@ int main () {
       return 0;
     } else {
       guesses += 1;
-      cout << "That was not correct. You have " << 3 - guesses << " guesses left." << endl;
+      if ((3 - guesses) == 1) {
+        cout << "That was not correct. You have " << 1 << " guess left." << endl;
+      } else {
+        cout << "That was not correct. You have " << 3 - guesses << " guesses left." << endl;
+      }
     if (guesses == 3) {
       printf("You have had three guesses. You lose!\n");
       cout << "The number was " << num << ". Nice try." << endl;
