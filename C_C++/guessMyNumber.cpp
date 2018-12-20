@@ -31,7 +31,6 @@ int main () {
   int ans;
   int check;
   int guesses = 0;
-  cout << num << endl;
   while (guesses < 3) {
     printf("Choose a number between 1 and 10\n> ");
     ans = getInt();
