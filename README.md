@@ -113,5 +113,5 @@ Choose a number between 1 and 10
 That was not correct. You have 1 guess left.
 Choose a number between 1 and 10
 &gt; 9
-You guessed the number correctly!"
+You guessed the number correctly!
 </pre>
