@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <style>
+    #loadBtn, #saveBtn {
+      color: white;
+      background-color: black;
+      height: 50px;
+      width: 50px;
+      border: 2px dotted grey;
+    }
+    #welcomeArea {
+      background-color: aqua;
+      height: 500px;
+      width: 100%;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    function bodyLoaded() {
+      console.log("Page loaded.");
+    }
+    $(document).ready(function(){
+      $("#loadBtn").click(function(){
+        $("#notesArea").load("userNotes.txt");
+      });
+    });
+</script>
+</head>
+<body onload="bodyLoaded();">
+  <h1 id="welcomeMsg">Welcome To Notes!</h1>
+  <textarea id="notesArea" placeholder="Write your notes here. Use the save button to save them, and the load button to load them from the last time you saved them."></textarea>
+  <br /><br />
+  <button id="loadBtn">Load Notes</button>
+  <button id="saveBtn">Save Notes</button>
+</body>
+</html>
