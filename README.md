@@ -26,7 +26,7 @@ This will run the program.
 <hr />
 
 For requirement 5c:
-Open [this](../blob/master/Web/index.html) file. It is a webpage, so you don't need to do anything else.
+Open [this](/Web/index.html) file. It is a webpage, so you don't need to do anything else.
 
 #### Requirement 5A
 __Sample output for Python 2.7.10:__
