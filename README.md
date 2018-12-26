@@ -1,6 +1,35 @@
 # ProgrammingMeritBadge
 ### Programming merit badge requirements.
 
+#### How To Run:
+For requirement 5a:
+
+##### For MacOS, run the following command in Terminal:
+<pre>./run-legacy</pre>
+This will run the 2.7.10 variant of the program.
+
+###### For the 3.710 version, use the following command
+<pre>./build</pre>
+This will build and run the 3.710 variant of the program. The run file is named _run_.
+
+<hr />
+
+For requirement 5b:
+
+##### For MacOS, run the following command in Terminal:
+<pre>./build</pre>
+This will build and run the program. The run file is named _run_.
+
+##### Then, when running, use this command:
+<pre>./run</pre>
+This will run the program.
+
+<hr />
+
+For requirement 5c:
+
+###### This is a webpage. Open the file index.html.
+
 #### Requirement 5A
 __Sample output for Python 2.7.10:__
 
@@ -74,4 +103,26 @@ Thank you!
 
 #### Requirement 5B
 __Sample Output for Guess My Number__
-<pre>Coming Soon! Guess My Number is still in development</pre>
+<pre>
+Choose a number between 1 and 10
+\> 4
+That was not correct. You have 2 guesses left.
+Choose a number between 1 and 10
+\> 2
+That was not correct. You have 1 guess left.
+Choose a number between 1 and 10
+\> 8
+That was not correct. You have 0 guesses left.
+You have had three guesses. You lose!
+The number was 9. Nice try.
+Fantastics-MacBook-Pro:C_C++ b$ ./run
+Choose a number between 1 and 10
+\> 7
+That was not correct. You have 2 guesses left.
+Choose a number between 1 and 10
+\> 3
+That was not correct. You have 1 guess left.
+Choose a number between 1 and 10
+\> 9
+You guessed the number correctly!
+</pre>

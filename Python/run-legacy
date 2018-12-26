@@ -1,0 +1,4 @@
+#!/bin/#!/usr/bin/env bash
+
+echo "Running Convert Temperature LEGACY..."
+python convertTemp.py

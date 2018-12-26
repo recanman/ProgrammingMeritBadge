@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 def convertUSDtoEURO_req5():
    usd = input("Enter money in USD ($) > ")
