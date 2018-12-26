@@ -34,7 +34,7 @@ For requirement 5c:
 __Sample output for Python 2.7.10:__
 
 <pre>
-cd ~/IdeaProjects/Programming_MB/ && python convertTemp.py
+./run-legacy
 This is the original program.
 Enter next temperature in degrees Farenheight (F):101
 ('Temperature in degrees C is:', 38)
@@ -70,7 +70,7 @@ This is the amount of money in EURO'S: 87000.0
 
 __Sample Output for Python 3.710:__
 <pre>
-python3 convertTemp-3.7.10.py
+./run
 This is the original program.
 Enter next temperature in degrees Farenheight (F):72
 Temperature in degrees C is: 22.22222222222222
@@ -104,25 +104,14 @@ Thank you!
 #### Requirement 5B
 __Sample Output for Guess My Number__
 <pre>
+./run
 Choose a number between 1 and 10
-\> 4
+&gt; 7
 That was not correct. You have 2 guesses left.
 Choose a number between 1 and 10
-\> 2
+&gt; 3
 That was not correct. You have 1 guess left.
 Choose a number between 1 and 10
-\> 8
-That was not correct. You have 0 guesses left.
-You have had three guesses. You lose!
-The number was 9. Nice try.
-Fantastics-MacBook-Pro:C_C++ b$ ./run
-Choose a number between 1 and 10
-\> 7
-That was not correct. You have 2 guesses left.
-Choose a number between 1 and 10
-\> 3
-That was not correct. You have 1 guess left.
-Choose a number between 1 and 10
-\> 9
-You guessed the number correctly!
+&gt; 9
+You guessed the number correctly!"
 </pre>
