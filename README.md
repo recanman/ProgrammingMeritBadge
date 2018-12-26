@@ -1,34 +1,32 @@
 # ProgrammingMeritBadge
-### Programming merit badge requirements.
+### _Programming merit badge requirements._
 
 #### How To Run:
 For requirement 5a:
 
-##### For MacOS, run the following command in Terminal:
-<pre>./run-legacy</pre>
-This will run the 2.7.10 variant of the program.
 
-###### For the 3.710 version, use the following command
-<pre>./build</pre>
-This will build and run the 3.710 variant of the program. The run file is named _run_.
+###### To run the 2.7.10 version, run the following command in Terminal:
+<pre>./run-legacy</pre>
+###### To run the 3.710 version, run the following command in Terminal:
+<pre>./run</pre>
+
 
 <hr />
 
+
 For requirement 5b:
 
-##### For MacOS, run the following command in Terminal:
+###### To run the program, run the following command in Terminal:
 <pre>./build</pre>
 This will build and run the program. The run file is named _run_.
-
-##### Then, when running, use this command:
+###### Then, when you want to run the program (after the time where it runs it in _build_), use this command:
 <pre>./run</pre>
 This will run the program.
 
 <hr />
 
 For requirement 5c:
-
-###### This is a webpage. Open the file index.html.
+Open [this](../blob/master/Web/index.html) file. It is a webpage, so you don't need to do anything else.
 
 #### Requirement 5A
 __Sample output for Python 2.7.10:__
