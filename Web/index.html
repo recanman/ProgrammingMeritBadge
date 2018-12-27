@@ -3,36 +3,70 @@
   <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <style>
-    #loadBtn, #saveBtn {
-      color: white;
-      background-color: black;
-      height: 50px;
-      width: 50px;
-      border: 2px dotted grey;
-    }
-    #welcomeArea {
-      background-color: aqua;
-      height: 500px;
-      width: 100%;
-    }
+      #infoArea {
+        width: 100%;
+        height: 250px;
+        background-color: blue;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      #infoText, #descText {font-weight: 100;}
+      #descText {font-style: italic;}
+
+      #searchArea {
+        width: 49.8%;
+        height: 250px;
+        background-color: darkblue;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        float: left;
+        position: relative;
+      }
+      #searchArea2 {
+        width: 50%;
+        height: 250px;
+        background-color: darkblue;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        float: right;
+        position: relative;
+      }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-    function bodyLoaded() {
-      console.log("Page loaded.");
-    }
-    $(document).ready(function(){
-      $("#loadBtn").click(function(){
-        $("#notesArea").load("userNotes.txt");
-      });
-    });
+  (function() {
+    var cx = '009093725518481678003:xzreb5lgiiy';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
 </script>
-</head>
-<body onload="bodyLoaded();">
-  <h1 id="welcomeMsg">Welcome To Notes!</h1>
-  <textarea id="notesArea" placeholder="Write your notes here. Use the save button to save them, and the load button to load them from the last time you saved them."></textarea>
-  <br /><br />
-  <button id="loadBtn">Load Notes</button>
-  <button id="saveBtn">Save Notes</button>
-</body>
+  </head>
+  <body>
+    <div id="infoArea">
+      <h1 id="infoText">Compare Search Engines</h1>
+      <p id="descText">Use this webpage to search something between webpages,<br />and you can compare which one is the best!</p>
+    </div>
+    <hr size="30px;" style="background-color: black;" />
+    <div id="searchArea"><br /><br /><br />
+      <h1 id="infoText">Google</h1>
+      <p id="descText">A convenient search engine that can provide you with a lot of things,<br /> but it can sometimes not supply your searching needs.</p>
+      <gcse:search>image</gcse:search>
+    </div>
+    <div id="searchArea2"><br /><br /><br />
+      <h1 id="infoText">Google</h1>
+      <p id="descText">A convenient search engine that can provide you with a lot of things,<br /> but it can sometimes not supply your searching needs.</p>
+      <form method="get" action="http://search.yahoo.com/search" style="border:3px double black;padding:5px;">
+        <input type="text" name="p" />
+        &nbsp; <input type="submit" value="Search Yahoo!" />
+      </form>
+    </div>
+  </body>
 </html>
