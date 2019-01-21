@@ -23,54 +23,118 @@
       #generatorArea {
         border: 2px solid white;
         width: 50%;
-        height: 50%;
+        height: 75%;
         position: absolute;
         left: 25%;
       }
+      #fancyButton {
+        background-color: grey;
+        color: white;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
     </style>
     <script>
+    function clearNumbers() {
+      if (document.getElementById("numberOutput1").value == "") {
+        alert("The numbers are already cleared.");
+      }
+      else if (document.getElementById("numberOutput2").value == "") {
+        alert("The numbers are already cleared.");
+      } else {
+        document.getElementById("answer").value = "";
+        document.getElementById("numberOutput1").value = "";
+        document.getElementById("numberOutput2").value = "";
+        console.log("Cleared numbers successfully.");
+      }
+    }
     var randInt;
-    function generateInt() {
-      document.getElementById("numberSum").value = null;
-      randInt = Math.round(Math.random() * 1000) + 1;
+    function generateInt() { // Generate integer function.
+      document.getElementById("answer").value = null;
+      randInt = Math.round(Math.random() * 10000) + 1;
       console.log("Random number 1 successfully found: " + randInt);
       document.getElementById("numberOutput1").value = randInt;
-      randInt = Math.round(Math.random() * 1000) + 1;
+      randInt = Math.round(Math.random() * 10000) + 1;
       console.log("Random number 2 successfully found: " + randInt);
       document.getElementById("numberOutput2").value = randInt;
       console.log("----- Finished generating numbers successfully. -----");
     }
-    function addInt() {
+
+    function addInt() { // Addition function.
       if (document.getElementById("numberOutput1").value == "") {
         alert("Press generate numbers first, them you can add them.");
       }
-      else if (document.getElementById("numberOutput1").value == "") {
+      else if (document.getElementById("numberOutput2").value == "") {
         alert("Press generate numbers first, them you can add them.");
       } else {
-      document.getElementById("numberSum").value = parseInt(document.getElementById("numberOutput1").value) + parseInt(document.getElementById("numberOutput2").value);
+        document.getElementById("answer").value = parseInt(document.getElementById("numberOutput1").value) + parseInt(document.getElementById("numberOutput2").value);
+        console.log("Added numbers successfully, answer is " + document.getElementById("answer").value);
+      }
+    }
+
+    function subInt() { // Subtraction function.
+      if (document.getElementById("numberOutput1").value == "") {
+        alert("Press generate numbers first, them you can subtract them.");
+      }
+      else if (document.getElementById("numberOutput2").value == "") {
+        alert("Press generate numbers first, them you can subtract them.");
+      } else {
+        document.getElementById("answer").value = parseInt(document.getElementById("numberOutput1").value) - parseInt(document.getElementById("numberOutput2").value);
+        console.log("Subtracted numbers successfully, answer is " + document.getElementById("answer").value);
+      }
+    }
+
+    function multInt() { // Multiplacation function.
+      if (document.getElementById("numberOutput1").value == "") {
+        alert("Press generate numbers first, them you can multiply them.");
+      }
+      else if (document.getElementById("numberOutput2").value == "") {
+        alert("Press generate numbers first, them you can multiply them.");
+      } else {
+        document.getElementById("answer").value = parseInt(document.getElementById("numberOutput1").value) * parseInt(document.getElementById("numberOutput2").value);
+        console.log("Multiplied numbers successfully, answer is " + document.getElementById("answer").value);
+      }
+    }
+
+    function divInt() { // Division function.
+      if (document.getElementById("numberOutput1").value == "") {
+        alert("Press generate numbers first, them you can divide them.");
+      }
+      else if (document.getElementById("numberOutput2").value == "") {
+        alert("Press generate numbers first, them you can divide them.");
+      } else {
+        document.getElementById("answer").value = parseInt(document.getElementById("numberOutput1").value) / parseInt(document.getElementById("numberOutput2").value);
+        console.log("Divided numbers successfully, answer is " + document.getElementById("answer").value);
       }
     }
     </script>
   </head>
   <body>
     <div id="infoArea">
-      <h1 id="infoText">Number Operations Game</h1>
+      <h1 id="infoText">Random Number Calculator</h1>
       <p id="descText">Use this site to generate two random numbers, and perform multiple operations on them.</p>
       <div id="generatorArea">
         <br />
         <br />
         <br />
         <br />
-        <input readonly id="numberOutput1" />&nbsp;+
-        <input readonly id="numberOutput2" />
+        <input readonly id="numberOutput1" placeholder="Number 1" />&nbsp;
+        <input readonly id="numberOutput2" placeholder="Number 2" />
         <br />
         <br />
-        = <input readonly id="numberSum" />
         <br />
         <br />
-        <button onclick="generateInt()">Generate Numbers!</button>
-
-        <button onclick="addInt()">Add The Numbers!</button>
+        <button id="fancyButton" onclick="generateInt()">Generate Numbers</button><br />
+        <button id="fancyButton" onclick="addInt()">Add The Numbers</button>
+        <button id="fancyButton" onclick="subInt()">Subtract The Numbers</button>
+        <button id="fancyButton" onclick="multInt()">Multiply The Numbers</button>
+        <button id="fancyButton" onclick="divInt()">Divide The Numbers</button>
+        <hr />
+        <br />
+        <br />
+        <input style="height: 50px;" readonly id="answer" placeholder="Answer" />
+        <button id="fancyButton" onclick="clearNumbers()">Clear The Numbers</button>
       </div>
     </div>
   </body>
