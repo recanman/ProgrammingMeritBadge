@@ -28,11 +28,6 @@ This will run the program.
 For requirement 5c:
 Open [this](/Web/index.html) file.
 
-##### _Requirements_
-1. Node.JS
-2. A modern web browser, like Chrome
-
-
 #### Requirement 5A
 __Sample output for Python 2.7.10:__
 
