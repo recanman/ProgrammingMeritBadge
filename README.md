@@ -55,12 +55,12 @@ Remember to hydrate!
 Maybe you should reconsider going on this trip.
 Input another?0
 This is the for the fourth requirement.
-What is your name?Abboud
-Hello, Abboud
-Abboud, enter next temperature in degrees Farenheight (F):-1
-('Abboud, the temperature in degrees C is:', -19)
-Hey Abboud, Pack long underwear!
-Abboud, would you like to input another?0
+What is your name?Bob
+Hello, Bob
+Bob, enter next temperature in degrees Farenheight (F):-1
+('Bob, the temperature in degrees C is:', -19)
+Hey Bob, Pack long underwear!
+Bob, would you like to input another?0
 This is for the final requirement.
 Enter money in USD ($) > 100000
 This is the amount of money in EURO'S: 87000.0
